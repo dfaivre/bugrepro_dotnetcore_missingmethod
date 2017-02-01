@@ -6,12 +6,15 @@ is thrown when trying to create an HttpClient:
 
 ```
 Error Message:
- System.MissingMethodException : Method not found: 'System.Net.Http.HttpClient Microsoft.AspNetCore.TestHost.TestServer.CreateClient()'.
+ System.MissingMethodException : 
+   Method not found: 'System.Net.Http.HttpClient Microsoft.AspNetCore.TestHost.TestServer.CreateClient()'.
 ```
 
 It is also thrown when creating a "classic" .NET Framework class library and using `PackageReferences` for NuGet.
 
 The exception is not thrown when targeting `netcoreapp1.0`, or when creating a "classic" .NET Framework class library using `packages.config` for NuGet.
+
+All projects include a single xUnit test that creates a `TestServer` and then creates an `HttpClient` from that server.
 
 Projects included for reproduction of the issue:
 * **TestHostDebug**: .NET Core xUnit project targeting `net461`
