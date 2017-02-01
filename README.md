@@ -1,7 +1,7 @@
 # bugrepro_dotnetcore_missingmethod
 Issue reproduction for AspNetCore.TestHost throwing a missing method exception when running in a dotnet core app targeting the full framework.
 
-When referencing `Microsoft.AspNetCore.TestHost` nuget package in a .NET Core project that targets `net461`, a `MissingMethodException` 
+When referencing `Microsoft.AspNetCore.TestHost` (https://www.nuget.org/packages/Microsoft.AspNetCore.TestHost/) nuget package in a .NET Core project that targets `net461`, a `MissingMethodException` 
 is thrown when trying to create an HttpClient:
 
 ```
